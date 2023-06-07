@@ -1,16 +1,35 @@
-# ddd_booking_app
+# Booking app using Domain Driven Design
 
-A new Flutter project.
+## Domain Objects
+### Workspace
+- ID
+- floor
+- location (Bern or Schlieren)
+#### Room
+- capacity (>= 1)
+#### Desk
+### User
+- ID
+- name
+#### Employer
+#### Employee
+### Booking
+- ID
+- workspace
+- employees (cannot be more than workspace.capacity)
+- start
+- end
 
-## Getting Started
+## Use Cases
+### Employer
+- Create workspace
+- Delete workspace
+### Employee
+- See available workspaces
+- Book workspace
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Next steps
+- Implement value objects and entities for domain objects
+- Use Email and Password value objects as orientation
+- Use UUID for IDs of entities
+- Use TimeRange aggregate for start and end
